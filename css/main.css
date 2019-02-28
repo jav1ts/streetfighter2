@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+script{
+    display: none;
+}
+
+body{
+    font-family: 'Rajdhani', sans-serif;
+    background: black;
+}
+
+.mainLayout{
+    display: grid;
+    grid-template-rows: 150px 950px 40px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "header header"
+        "main main"
+        "footer footer"
+}
+
+.header{
+    /* border: solid blue; */
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.nav-logo{
+    height: 100%;
+    background: url(../images/small-logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.nav-content{
+    padding-top: 60px;
+    padding-right: 20px;
+    text-align: right;
+    word-spacing: 50px;
+}
+
+.main{
+    display: grid;
+    /* border: solid blue; */
+    grid-area: main;   
+}
+
+.about-1{
+    justify-content: center;
+    display: grid;
+    grid-template-rows: 100px 250px 250px 250px;
+    grid-template-columns: 400px 400px;
+    grid-gap: 20px;
+    height: 100%;
+    /* border: solid green; */
+    padding: 20px;
+    grid-template-areas: 
+        "top top"
+        "middle middle"
+        "middle middle"
+        "middle middle"
+}
+
+.about-1 h1{
+    font-size: 50pt;
+    grid-area: top;
+    text-align: center;
+}
+
+.about-1 img{
+    width: 400px;
+}
+
+.about-1 p{
+    width: 400px;
+}
+
+.footer{
+    grid-area: footer;
+    color: white;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.credits{
+    text-align: center;
+    /* border: solid red; */
+    grid-row: 1/2;
+}
+
+.socialmedia{
+    padding-right: 60px;
+    word-spacing: 30px;
+    text-align: right;
+    /* border: solid red; */
+    font-size: 24px;
+    /* grid-row: 2/3; */
+}
+
+video #bgvideo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100vw;
+    height: 100vh;
+    z-index: -100;
+    /* transform: translateX(-50%) translateY(-50%); */
+    background: url(../images/mainintrologo.jpg) no-repeat;
+    background-size: cover;
+}
+
+#hero{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+#unmute{
+    padding: 5px;
+    color: black;
+}
+
+.main2{
+    display: grid;
+    /* border: solid blue; */
+    grid-area: main;
+}
+
+.main22{
+    font-size: 60px;
+    justify-content: center;
+    display: grid;
+    grid-template-rows: 90px 300px 300px;
+    /* grid-template-columns: 900px; */
+    grid-gap: 10px;
+    height: 700px;
+    /* border: 10px solid green; */
+    padding: 20px;
+    grid-template-areas: 
+        "tp"
+        "mid"
+        "bot"
+}
+
+.main22 img{
+    width: 280px;
+}
+
+#chara{
+    /* border: 2px solid yellow; */
+    grid-area: tp;
+    text-align: center;
+    font-size: 60pt;
+}
+
+.charstop{
+    /* border: solid yellow; */
+    grid-area: mid;
+}
+
+.charsbottom{
+    /* border: solid yellow; */
+    grid-area: bot;
+}
+
+.main22 .charpics{
+    display: none;
+}
+
+.main22 .charsbottom{
+    display: none;
+}
+
+#controls{
+    cursor: pointer;
+    text-align: center;
+}
+
+#ryupic{
+    display: block;
+}
+
+.about-1 img{
+    cursor: pointer;
+}
+
+.about-1 img:hover{
+    animation: enlarge 1s ease-in-out infinite;
+}
+
+@keyframes enlarge {
+    0%{
+        transform: scale(0.9);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(0.9);
+    }
+}
+
+/* modal code */
+
+.popUp {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(88,8,8,0.8);
+    z-index: 999;
+    opacity:0;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+   }
+   .popUp:target {
+    opacity:1;
+    pointer-events: auto;
+   }
+   .popUp > div {
+    position: absolute;
+    margin: 10% auto;
+    padding: 50px 20px;
+    padding-top: 100px;
+    border-radius: 10px;
+    background: rgba(88,8,8,0.8);
+   }
+   .popUp {
+    width: 300px;
+    height: 60px;
+    position: absolute;
+    font-size: 20pt;
+    text-align: center;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: rgba(255,0,0,0.8);
+   }
+   .close {
+    background: rgba(255, 0, 0, 0.9);
+    color: white;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+   }
+   .close:hover { background: #000; }
